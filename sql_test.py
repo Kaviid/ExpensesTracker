@@ -8,7 +8,7 @@ connt = pyodbc.connect(  'Driver={ODBC Driver 17 for SQL Server};'
 
 print("Connected successfully")
 
-cursor = connt.execute("SELECT 1")
+cursor = connt.execute("SELECT name FROM sys.tables") # This show all tables in My DB
 
 row = cursor.fetchone() 
 print(row) 
