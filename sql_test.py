@@ -6,10 +6,13 @@ connt = pyodbc.connect(  'Driver={ODBC Driver 17 for SQL Server};'
                             'Trusted_Connection=yes;'
                         )
 
-print("Connected successfully")
+cursor = connt.cursor()
 
-cursor = connt.execute("SELECT name FROM sys.tables") # This show all tables in My DB
+quary = "INSERT INTO Statment (date, descreption, income, expenses, balance) VALUES(?,?,?,?,?)"
+cursor.execute(quary, ('2026-02-12', 'kaveesha', 23000, None, 400000))
 
-row = cursor.fetchone() 
-print(row) 
+connt.commit()
+print("Insert successfully!")
 
+cursor.close()
+connt.close()
