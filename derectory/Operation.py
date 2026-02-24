@@ -28,6 +28,9 @@ class Operation :
       self.connt.commit()
       print("Insert Syccessfully!")
 
+      #Return updated latest balance
+      return updated_balance
+
     except TypeError:
       self.cursor.execute(quary, (date, "descreption", amount, None, amount))
       self.connt.commit()
@@ -55,7 +58,3 @@ class Operation :
 
 
 
-
-test = Operation()
-#test.Income(23000)
-test.Expenses(12000)
