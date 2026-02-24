@@ -1,4 +1,4 @@
-import derectory.income as income
+import derectory.input_handle as income
 
 add = income.Deposite('Kaveesha Dias')
 
@@ -11,5 +11,6 @@ ask_list ="""[1] Add Income
 
 methods_link = {
     '1' : add.deposit,
+    '2' : add.expense,
     '3' : add.balance
 }
