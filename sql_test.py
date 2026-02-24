@@ -1,5 +1,5 @@
 import pyodbc
- 
+
 connt = pyodbc.connect(  'Driver={ODBC Driver 17 for SQL Server};' 
                             'Server=.\SQLEXPRESS;'
                             'Database=ExpensesTracker;'
@@ -16,3 +16,4 @@ print("Insert successfully!")
 
 cursor.close()
 connt.close()
+

@@ -1,7 +1,6 @@
 import derectory.income as income
 from derectory import constant
 
-
 add = income.Deposite("Kaveesha Dias")
 
 
@@ -15,4 +14,3 @@ except Exception as KeyError:
     #When user enter a number which isn't valid
     print("\nUSAGE : Only add given methods number <1>")
     print("Exiting...\n")
-

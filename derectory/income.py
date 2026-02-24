@@ -9,6 +9,6 @@ class Deposite :
         amount = float(input("Amount : "))
         Deposite.acc_amount += amount
         print(f"\n{self.name}'s Account balance : Rs:{Deposite.acc_amount}\n")
-    
+
     def balance(self) :
         print(f"Acc Balance : Rs:{Deposite.acc_amount}\n")
