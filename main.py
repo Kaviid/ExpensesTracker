@@ -1,4 +1,4 @@
-import derectory.income as income
+import derectory.input_handle as income
 from derectory import constant
 
 add = income.Deposite("Kaveesha Dias")

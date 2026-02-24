@@ -51,10 +51,15 @@ class Operation :
       self.connt.commit()
       print("Insert Syccessfully!")
 
+      return updated_balance
+
     except TypeError:
       self.cursor.execute(quary, (date, "Descreption", None, amount, amount))
       self.connt.commit()
       print(f"DataBase empty...Added {amount} as the First!")
 
-
+  def GetBalance(self, name):
+    self.cursor.execute("SELECT TOP 1 balance FROM Statment ORDER BY TID DESC;")
+    balance = self.cursor.fetchone()[0]
+    print(f"{name}'s current account balance : Rs.{balance}\n")
 
