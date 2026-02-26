@@ -1,6 +1,3 @@
-import derectory.input_handle as income
-
-add = income.Deposite('Kaveesha Dias')
 
 ask_list ="""[1] Add Income
 [2] Add Expences
@@ -9,11 +6,6 @@ ask_list ="""[1] Add Income
 """
 
 
-methods_link = {
-    '1' : add.deposit,
-    '2' : add.expense,
-    '3' : add.balance
-}
 
 expense_categories = {
     "1": "Rent",

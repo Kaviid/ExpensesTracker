@@ -26,7 +26,7 @@ class Operation :
       #Insert updated values into DataBase
       self.cursor.execute(quary, (date, "descreption", amount, None, updated_balance))
       self.connt.commit()
-      print("Insert Syccessfully!")
+      print("Insert Successfully!")
 
       #Return updated latest balance
       return updated_balance
@@ -36,7 +36,7 @@ class Operation :
       self.connt.commit()
       print(f"DataBase empty...Added {amount} as the First!")
 
-  def Expenses(self, amount) :
+  def Expenses(self, amount, category) :
     try :
       quary = "INSERT INTO Statment (date, descreption, income, expenses, balance) VALUES (?,?,?,?,?)" #Expenses add Quary store in var
       date = datetime.datetime.now().date() #Get date
@@ -47,14 +47,14 @@ class Operation :
       updated_balance = updated_balance - amount
 
       #Insert 
-      self.cursor.execute(quary, (date, "Descreption", None, amount, updated_balance))
+      self.cursor.execute(quary, (date, category, None, amount, updated_balance))
       self.connt.commit()
-      print("Insert Syccessfully!")
+      #print("Insert Successfully!")
 
       return updated_balance
 
-    except TypeError:
-      self.cursor.execute(quary, (date, "Descreption", None, amount, amount))
+    except TypeError: #If thransaction is first value in DB
+      self.cursor.execute(quary, (date, category, None, amount, amount))
       self.connt.commit()
       print(f"DataBase empty...Added {amount} as the First!")
 
